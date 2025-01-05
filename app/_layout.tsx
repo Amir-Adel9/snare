@@ -1,10 +1,10 @@
+import { TransitionPresets } from '@react-navigation/bottom-tabs';
 import '../global.css';
 import '../global.css';
 import '../global.css';
 
 import { Stack } from 'expo-router';
 
-import { PortalHost } from '@rn-primitives/portal';
 import { GluestackUIProvider } from '~/components/ui/gluestack-ui-provider';
 
 export default function RootLayout() {
@@ -20,21 +20,26 @@ export default function RootLayout() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
+          animation: 'fade_from_bottom',
+          animationDuration: 300,
         }}
       >
         <Stack.Screen
           name='index'
           options={{
-            title: 'Home',
+            title: 'Snare ',
+            headerTitleAlign: 'center',
+            headerLargeTitle: true,
           }}
         />
         <Stack.Screen
           name='details'
           options={{
+            ...TransitionPresets.FadeTransition,
+
             title: 'Details',
           }}
         />
-        <PortalHost />
       </Stack>
     </GluestackUIProvider>
   );

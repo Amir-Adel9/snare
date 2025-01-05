@@ -4,8 +4,8 @@
     "slug": "snare",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/snare.png",
-    "scheme": "myapp",
+    "icon": "./assets/images/adaptive-icon.png",
+    "scheme": "snare",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -13,25 +13,33 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/snare.png",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.amiradel.snare"
     },
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/snare.png"
+      "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/snare.png",
+          "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#000000",
+          "dark": {
+            "backgroundColor": "#000000"
+          }
         }
       ]
     ],
@@ -45,7 +53,6 @@
       "eas": {
         "projectId": "c0b22752-162d-474d-a83b-8138d15b2d91"
       }
-    },
-    "owner": "amiradel"
+    }
   }
 }

@@ -20,24 +20,19 @@ export default function RootLayout() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-          animation: 'fade_from_bottom',
-          animationDuration: 300,
+          headerTitleAlign: 'center',
         }}
       >
         <Stack.Screen
           name='index'
           options={{
-            title: 'Snare ',
-            headerTitleAlign: 'center',
-            headerLargeTitle: true,
+            title: 'Snare',
           }}
         />
         <Stack.Screen
           name='details'
           options={{
-            ...TransitionPresets.FadeTransition,
-
-            title: 'Details',
+            title: 'Snare',
           }}
         />
       </Stack>

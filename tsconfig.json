@@ -3,14 +3,10 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "~/*": [
-        "*"
-      ],
       "@/*": [
         "./*"
       ]
-    },
-    "baseUrl": "."
+    }
   },
   "include": [
     "**/*.ts",

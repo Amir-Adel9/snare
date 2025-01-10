@@ -1,5 +1,5 @@
-const NotepadScreen = () => {
-  return <div>NotepadScreen</div>;
-};
+import NotepadView from '@/src/core/views/Notepad/NotepadView';
 
-export default NotepadScreen;
+export default function Notepad() {
+  return <NotepadView />;
+}

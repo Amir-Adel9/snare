@@ -3,11 +3,22 @@ import '@/global.css';
 
 export default function RootLayout() {
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        headerShown: true,
+        statusBarBackgroundColor: '#6366f1',
+        headerStyle: {
+          backgroundColor: '#6366f1',
+          borderBottomWidth: 0,
+        },
+        headerTintColor: '#ffffff',
+        headerTitleAlign: 'center',
+      }}
+    >
       <Stack.Screen
         name='(tabs)'
         options={{
-          headerShown: false,
+          title: 'Snare',
         }}
       />
     </Stack>

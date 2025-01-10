@@ -1,5 +1,5 @@
 import HomeView from '@/src/core/views/Home/HomeView';
 
-export default function Index() {
+export default function Home() {
   return <HomeView />;
 }

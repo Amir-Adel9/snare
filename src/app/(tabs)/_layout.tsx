@@ -1,58 +1,25 @@
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Workouts from './workouts';
+import Home from '.';
+import BottomTabs from '@/src/core/components/BottomTabs';
 import { APP_MODULES } from '@/src/core/app-modules';
-import { router, Tabs } from 'expo-router';
-import {
-  Apple,
-  ArrowLeft,
-  DollarSign,
-  Dumbbell,
-  Home,
-  Notebook,
-} from 'lucide-react-native';
 
 export default function TabLayout() {
+  const Tab = createMaterialTopTabNavigator();
+
   return (
-    <Tabs
-      screenOptions={{
-        tabBarShowLabel: false,
-        title: 'Snare',
-        headerTitleAlign: 'center',
-      }}
+    <Tab.Navigator
+      backBehavior='history'
+      tabBarPosition='bottom'
+      tabBar={(props) => <BottomTabs {...props} />}
     >
-      <Tabs.Screen
-        name={APP_MODULES.notepad.name}
-        options={{
-          tabBarIcon: ({ color }) =>
-            APP_MODULES.notepad.icon({ props: { color } }),
-        }}
-      />
-      <Tabs.Screen
-        name={APP_MODULES.expenses.name}
-        options={{
-          tabBarIcon: ({ color }) =>
-            APP_MODULES.expenses.icon({ props: { color } }),
-        }}
-      />
-      <Tabs.Screen
-        name={APP_MODULES.home.name}
-        options={{
-          tabBarIcon: ({ color }) =>
-            APP_MODULES.home.icon({ props: { color } }),
-        }}
-      />
-      <Tabs.Screen
-        name={APP_MODULES.workouts.name}
-        options={{
-          tabBarIcon: ({ color }) =>
-            APP_MODULES.workouts.icon({ props: { color } }),
-        }}
-      />
-      <Tabs.Screen
-        name={APP_MODULES.calories.name}
-        options={{
-          tabBarIcon: ({ color }) =>
-            APP_MODULES.calories.icon({ props: { color } }),
-        }}
-      />
-    </Tabs>
+      {Object.values(APP_MODULES).map((module) => (
+        <Tab.Screen
+          key={module.name}
+          name={module.name}
+          component={module.component}
+        />
+      ))}
+    </Tab.Navigator>
   );
 }

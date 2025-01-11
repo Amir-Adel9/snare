@@ -4,7 +4,7 @@ import { APP_MODULES } from '../app-modules';
 import { router } from 'expo-router';
 import { MaterialTopTabBarProps } from '@react-navigation/material-top-tabs';
 
-const BottomTabs = ({ state, navigation }: MaterialTopTabBarProps) => {
+const BottomTabs = ({ state }: MaterialTopTabBarProps) => {
   const [activeTabIndex, setActiveTab] = useState<number>(
     APP_MODULES.home.index
   );

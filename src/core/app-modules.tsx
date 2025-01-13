@@ -51,7 +51,7 @@ export const APP_MODULES = {
     title: 'Workouts',
     subtitle: 'Track your workouts and stay in shape',
     icon: ({ props = {} }: { props?: LucideProps }) => <Dumbbell {...props} />,
-    color: '#4F46E5',
+    color: '#6366f1',
     component: Workouts,
   },
   calories: {

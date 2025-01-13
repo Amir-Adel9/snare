@@ -8,20 +8,57 @@ export default function HomeView() {
     <View
       style={{
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: '#111',
+        backgroundColor: '#000000',
+        gap: 50,
       }}
     >
+      <View className='mt-10 p-6 w-full flex gap-2 '>
+        <Text
+          style={{
+            fontFamily: 'Inter_900Black',
+            fontWeight: 'condensed',
+            fontSize: 32,
+          }}
+          className=' text-indigo-500'
+        >
+          Welcome to{' '}
+          <Text
+            style={{
+              fontFamily: 'SpaceMono-Regular',
+              fontWeight: 'bold',
+              fontSize: 40,
+            }}
+            className=' text-indigo-500'
+          >
+            Snare
+          </Text>{' '}
+          👋
+        </Text>
+        <Text
+          style={{
+            fontFamily: 'Inter_900Black',
+            fontWeight: '400',
+            fontSize: 18,
+          }}
+          className=' text-gray-100'
+        >
+          A companion you can rely on
+        </Text>
+      </View>
       <ScrollView
-        className='flex px-2 pt-4 sm:w-3/4'
-        showsVerticalScrollIndicator={true}
+        style={{
+          flex: 1,
+          maxHeight: '60%',
+        }}
+        className='flex px-6 pt-4 sm:w-3/4 '
       >
         {Object.values(APP_MODULES)
           .filter((module) => module.name !== 'index')
           .map((module) => (
             <Link key={module.name} href={module.path} className='mb-4'>
-              <View className='bg-white rounded-2xl p-2 gap-1 flex flex-row items-center justify-between shadow-sm'>
+              <View className='bg-white rounded-2xl p-3 gap-1 flex flex-row items-center justify-between shadow-sm'>
                 <View className='w-10 h-10 bg-gray-50 rounded-full items-center justify-center'>
                   {module.icon({ props: { size: 20, color: module.color } })}
                 </View>
@@ -33,7 +70,7 @@ export default function HomeView() {
                     {module.subtitle}
                   </Text>
                 </View>
-                <ChevronRight size={20} color='#9CA3AF' />
+                <ChevronRight size={20} color='#6366f1' />
               </View>
             </Link>
           ))}

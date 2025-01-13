@@ -24,7 +24,7 @@ const BottomTabs = ({ state }: MaterialTopTabBarProps) => {
           >
             {module.icon({
               props: {
-                color: activeTabIndex === module.index ? '#6366f1' : '#8e8e8f',
+                color: activeTabIndex === module.index ? '#6366f1' : '#6e6e6f',
               },
             })}
           </TouchableOpacity>
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#222222',
+    backgroundColor: '#101010',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     paddingVertical: 10,

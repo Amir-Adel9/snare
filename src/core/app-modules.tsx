@@ -1,6 +1,5 @@
 import {
   Apple,
-  Component,
   Dumbbell,
   HomeIcon,
   LucideProps,
@@ -41,7 +40,7 @@ export const APP_MODULES = {
     title: 'Home',
     subtitle: 'Welcome to Snare, your personal assistant',
     icon: ({ props = {} }: { props?: LucideProps }) => <HomeIcon {...props} />,
-    color: '#2563EB',
+    color: '#6366f1',
     component: Home,
   },
   workouts: {
@@ -51,7 +50,7 @@ export const APP_MODULES = {
     title: 'Workouts',
     subtitle: 'Track your workouts and stay in shape',
     icon: ({ props = {} }: { props?: LucideProps }) => <Dumbbell {...props} />,
-    color: '#6366f1',
+    color: '#2563EB',
     component: Workouts,
   },
   calories: {

@@ -1,6 +1,4 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Workouts from './workouts';
-import Home from '.';
 import BottomTabs from '@/src/core/components/BottomTabs';
 import { APP_MODULES } from '@/src/core/app-modules';
 

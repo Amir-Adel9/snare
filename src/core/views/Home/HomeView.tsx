@@ -60,7 +60,7 @@ export default function HomeView() {
         {Object.values(APP_MODULES)
           .filter((module) => module.name !== 'index')
           .map((module) => (
-            <Link key={module.name} href={module.path} className='mb-4'>
+            <Link key={module.name} href={module.path} className='mb-5'>
               <View className='border border-[#e5e5e5] bg-[#222222] rounded-xl p-3 gap-1 flex flex-row items-center justify-between shadow-sm'>
                 <View className='w-10 h-10 rounded-full items-center justify-center'>
                   {module.icon({ props: { size: 20, color: module.color } })}

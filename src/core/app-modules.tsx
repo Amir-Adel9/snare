@@ -6,9 +6,10 @@ import {
   Notebook,
   Receipt,
 } from 'lucide-react-native';
+
 import Notepad from '../app/(tabs)/notepad';
 import Expenses from '../app/(tabs)/expenses';
-import Home from '@/src/app/(tabs)';
+import Home from '../app/(tabs)/index';
 import Workouts from '../app/(tabs)/workouts';
 import Calories from '../app/(tabs)/calories';
 
@@ -78,3 +79,87 @@ export type AppRoutes =
   | '/'
   | '/workouts'
   | '/calories';
+
+interface BaseTheme {
+  background: string;
+  foreground: string;
+  text: string;
+  accent: string;
+  border: string;
+}
+
+interface Theme extends BaseTheme {
+  primary: string;
+}
+
+const baseLightTheme: BaseTheme = {
+  background: '#F5F5F5',
+  foreground: '#FFFFFF',
+  text: '#333333',
+  accent: '#03DAC6',
+  border: '#E0E0E0',
+};
+
+const baseDarkTheme: BaseTheme = {
+  background: '#111111',
+  foreground: '#222222',
+  text: '#FFFFFF',
+  accent: '#03DAC6',
+  border: '#333333',
+};
+
+const lightThemes: Record<AppViews, Theme> = {
+  notepad: {
+    ...baseLightTheme,
+    primary: APP_MODULES.notepad.color,
+  },
+  expenses: {
+    ...baseLightTheme,
+    primary: APP_MODULES.expenses.color,
+  },
+  index: {
+    ...baseLightTheme,
+    primary: APP_MODULES.home.color,
+  },
+  workouts: {
+    ...baseLightTheme,
+    primary: APP_MODULES.workouts.color,
+  },
+  calories: {
+    ...baseLightTheme,
+    primary: APP_MODULES.calories.color,
+  },
+};
+
+const darkThemes: Record<AppViews, Theme> = {
+  notepad: {
+    ...baseDarkTheme,
+    primary: APP_MODULES.notepad.color,
+  },
+  expenses: {
+    ...baseDarkTheme,
+    primary: APP_MODULES.expenses.color,
+  },
+  index: {
+    ...baseDarkTheme,
+    primary: APP_MODULES.home.color,
+  },
+  workouts: {
+    ...baseDarkTheme,
+    primary: APP_MODULES.workouts.color,
+  },
+  calories: {
+    ...baseDarkTheme,
+    primary: APP_MODULES.calories.color,
+  },
+};
+
+export const getTheme = ({
+  screen,
+  isDarkMode,
+}: {
+  screen: AppViews;
+  isDarkMode: boolean;
+}): Theme => {
+  return isDarkMode ? darkThemes[screen] : lightThemes[screen];
+};

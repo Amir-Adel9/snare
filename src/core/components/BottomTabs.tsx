@@ -3,8 +3,11 @@ import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { APP_MODULES } from '../app-modules';
 import { router } from 'expo-router';
 import { MaterialTopTabBarProps } from '@react-navigation/material-top-tabs';
+import { useThemeStore } from '../theme/theme.store';
 
 const BottomTabs = ({ state }: MaterialTopTabBarProps) => {
+  const { setScreen } = useThemeStore();
+
   const [activeTabIndex, setActiveTab] = useState<number>(
     APP_MODULES.home.index
   );
